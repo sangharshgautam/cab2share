@@ -21,6 +21,12 @@ public class AbstractBaseDao<T> {
 
 	@PersistenceContext(unitName = "finnlerPersistenceUnit")
 	protected EntityManager entityManager;
+
+	
+	@Transactional(propagation=Propagation.REQUIRED)
+	public void create(T vendor) {
+		entityManager.persist(vendor);
+	}
 	
 	@Transactional(propagation=Propagation.REQUIRED, readOnly= true)
 	public List<T> findAll() {

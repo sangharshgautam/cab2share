@@ -7,8 +7,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.finnler.cab2share.Vendor;
 
@@ -17,10 +15,6 @@ public class VendorDaoImpl extends AbstractBaseDao<Vendor> implements VendorDao 
 
 	public VendorDaoImpl(){
 		super(Vendor.class);
-	}
-	@Transactional(propagation=Propagation.REQUIRED)
-	public void create(Vendor vendor) {
-		entityManager.persist(vendor);
 	}
 
 	public void test(){
