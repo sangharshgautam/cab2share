@@ -1,2 +1,0 @@
-insert into ADDRESS (CITY, STATE, COUNTRY) values ('GHAZIABAD', 'UTTAR_PRADESH', 'INDIA');
-insert into VENDOR (ADDR_ID, NAME) values ((SELECT ID FROM ADDRESS WHERE CITY = 'GHAZIABAD'), 'Test Taxi Service');
